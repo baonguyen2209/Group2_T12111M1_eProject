@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        Online Shopee
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" >HOME</a></li>
+            <li><a href="">PRODUCTS</a></li>
+            <li><a href="">SHOPS</a></li>
+            <li><a href="register.html">REGISTER</a></li>
+            <li><a href="">SIGNIN</a></li>
+        </ul>
+    </nav>
+    <section>
+        <form action="" onsubmit="return showInfo()">
+            <div id="header-form">Member Information</div>
+            <table>
+                <tr>
+                    <td>Full name</td>
+                    <td>
+                        <input type="text" required id="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <label>
+                            <input type="radio" name="gender" value="Male" class="gender">Male
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="Female" class="gender">Female
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hobbies</td>
+                    <td>
+                        <label>
+                            <input type="checkbox" value="Shopping" class="hobbies">Shopping
+                        </label>
+                        <label>
+                            <input type="checkbox" value="Eating out" class="hobbies">Eating out
+                        </label>
+                        <label>
+                            <input type="checkbox" value="Sporting" class="hobbies">Sporting
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td>
+                        <input type="date" name="" id="birth">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>
+                        <input type="text" name="" required id="address">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input type="text" name="" required pattern="^\w+@\w+\.\w+$" id="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td>
+                        <input type="text" name="" required pattern="\d+" id="phone">
+                    </td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>
+                        <select id="city" required>
+                            <option value="---Select---">---Select---</option>
+                            <option value="Saigon">Saigon</option>
+                            <option value="Hue">Hue</option>
+                            <option value="Hanoi">Hanoi</option>
+                            <option value="Danang">Danang</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Comment</td>
+                    <td>
+                        <textarea name="" id="comment" cols="" rows="4"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="form-submit">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+    <footer>
+        Shopee <sup>&#174;</sup> Copyright 2017. All rights reserved.
+    </footer>
+    <script>
+        function showInfo(){
+            var dateofbirth = document.getElementById('birth').value;
+            var birth = new Date(dateofbirth);
+            var today = new Date();
+            var age = Math.floor((today - birth)/(24*60*60*1000*365));
+            if ( age < 17 ) {
+                alert("Member age must be 17-year old or above");
+                return false;
+            }
+            var name = document.getElementById('name').value;
+            var arr = document.getElementsByClassName('gender');
+            var arr1 = document.getElementsByClassName('hobbies');
+            var gender ='';
+            var hobbies = '';
+            var address = document.getElementById('address').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var city = document.getElementById('city').value;
+            var comment = document.getElementById('comment').value;
+            for (var i=0;i<arr.length;i++){
+                if(arr[i].checked){
+                    gender += arr[i].value;
+                }
+            }
+            for (var i=0;i<arr1.length;i++){
+                if(arr1[i].checked){
+                    hobbies = hobbies + arr1[i].value + ',' + ' ';
+                }
+            }
+            alert("Member Infomation\n" + "-----------------\n" + "Name: " + name + "\n" + "Gender: " + gender + "\n" + "Hobbies: " + hobbies + "\n" + "Birthday: " + birth + "\n" + "Address: " + address + "\n" + "Email: " + email + "\n" + "Phone: " + phone + "\n" + "City: "+ city + "\n" + "Comment: " + comment);
+        }
+
+    </script>
+</body>
+</html>

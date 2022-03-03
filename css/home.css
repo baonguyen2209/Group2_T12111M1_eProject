@@ -1,0 +1,62 @@
+header{
+    font-size: 40px;
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+nav{
+    border: 1px solid;
+    margin-top: 15px;
+}
+
+nav ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;
+    width: 17%;
+}
+
+nav ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: blue;
+}
+
+a:hover{
+    background-color: rgb(32, 116, 32);
+    font-weight: bold;
+    color: white;
+}
+section{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+img{
+    width: 700px;
+    height: 400px;
+    display: block;
+    margin: auto;
+}
+footer{
+    text-align: center;
+    font-weight: 700;
+}
+section{
+    display: block;
+    margin: auto;
+    border: 2px solid;
+    width:40%;
+}
+#header-form{
+    background-color: green;
+    color: white;
+    font-size: 20px;
+}
+input:required:invalid{
+    border: 2px solid red;
+}
+
